@@ -3,12 +3,10 @@
 
 > <b>NOTE</b>
 >
-> An RTC Token applies to the following SDKs: 
+> anyRTC Token applies to the following SDKs: 
 >
-> - Agora Native SDK v2.1+
-> - Agora Web SDK v2.4+
-> - Agora Recording SDK v2.1+
-> - Agora RTSA SDK 
+> - anyRTC Native SDK v4.0+
+> - anyRTC Web SDK v4.0+
 >
-> An RTM Token applies to the Agora RTM SDK. 
-> The Agora RTSA SDK supports joining multiple channels. If you join multiple channels at the same time, then you MUST generate a specific token for each channel you join. 
+> An RTM Token applies to the anyRTC RTM SDK. 
+> The anyRTC RTSA SDK supports joining multiple channels. If you join multiple channels at the same time, then you MUST generate a specific token for each channel you join. 

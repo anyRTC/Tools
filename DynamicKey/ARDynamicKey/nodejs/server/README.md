@@ -2,7 +2,7 @@
 ## Fill in your vendor information
 Open *DemoServer.js* and replace <YOUR APP ID> and <YOUR APP CERTIFICATE> with your value
 ```
-// Fill the appID and appCertificate key given by Agora.io
+// Fill the appID and appCertificate key given by anyRTC.io
 var appID = "<YOUR APP ID>";
 var appCertificate = "<YOUR APP CERTIFICATE>";
 ```

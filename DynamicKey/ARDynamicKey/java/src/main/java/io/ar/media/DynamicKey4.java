@@ -9,8 +9,8 @@ public class DynamicKey4 {
     private static final String MEDIA_CHANNEL_SERVICE = "ACS";
     /**
      * Generate Dynamic Key for Public Sharing Service
-     * @param appID App IDassigned by Agora
-     * @param appCertificate App Certificate assigned by Agora
+     * @param appID App IDassigned by anyRTC
+     * @param appCertificate App Certificate assigned by anyRTC
      * @param channelName name of channel to join, limited to 64 bytes and should be printable ASCII characters
      * @param unixTs unix timestamp in seconds when generating the Dynamic Key
      * @param randomInt salt for generating dynamic key
@@ -26,8 +26,8 @@ public class DynamicKey4 {
 
     /**
      * Generate Dynamic Key for recording service
-     * @param appID Vendor key assigned by Agora
-     * @param appCertificate Sign key assigned by Agora
+     * @param appID Vendor key assigned by anyRTC
+     * @param appCertificate Sign key assigned by anyRTC
      * @param channelName name of channel to join, limited to 64 bytes and should be printable ASCII characters
      * @param unixTs unix timestamp in seconds when generating the Dynamic Key
      * @param randomInt salt for generating dynamic key
@@ -42,8 +42,8 @@ public class DynamicKey4 {
 
     /**
      * Generate Dynamic Key for media channel service
-     * @param appID Vendor key assigned by Agora
-     * @param appCertificate Sign key assigned by Agora
+     * @param appID Vendor key assigned by anyRTC
+     * @param appCertificate Sign key assigned by anyRTC
      * @param channelName name of channel to join, limited to 64 bytes and should be printable ASCII characters
      * @param unixTs unix timestamp in seconds when generating the Dynamic Key
      * @param randomInt salt for generating dynamic key

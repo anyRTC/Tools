@@ -5,14 +5,14 @@ import java.io.ByteArrayOutputStream;
 public class DynamicKey3 {
 
     /**
-     * Manipulate Agora dynamic key for media connection.
+     * Manipulate anyRTC dynamic key for media connection.
      *
-     * @param appID   App ID assigned by Agora when register
-     * @param appCertificate App Certificate assigned by Agora
+     * @param appID   App ID assigned by anyRTC when register
+     * @param appCertificate App Certificate assigned by anyRTC
      * @param channelName name of channel to join
      * @param unixTs      unix timestamp by seconds
      * @param randomInt   random uint32 salt for generating dynamic key
-     * @return String representation of dynamic key to join Agora media server
+     * @return String representation of dynamic key to join anyRTC media server
      * @throws Exception if any error occurs
      */
     public static String generate(String appID, String appCertificate, String channelName, int unixTs, int randomInt, long uid, int expiredTs) throws Exception {

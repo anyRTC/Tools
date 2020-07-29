@@ -6,7 +6,7 @@ var {RtcTokenBuilder, RtmTokenBuilder, RtcRole, RtmRole} = require('agora-access
 
 var PORT = 8080;
 
-// Fill the appID and appCertificate key given by Agora.io
+// Fill the appID and appCertificate key given by anyRTC.io
 var appID = "<YOUR APP ID>";
 var appCertificate = "<YOUR APP CERTIFICATE>";
 
@@ -31,7 +31,7 @@ var generateRtcToken = function(req, resp) {
     }
 
 
-    var key = RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channelName, uid, role, privilegeExpiredTs);
+    var key = RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channelName, uid, role, privilegeExpiredTs);
 
     resp.header("Access-Control-Allow-Origin", "*")
         //resp.header("Access-Control-Allow-Origin", "http://ip:port")
@@ -58,9 +58,9 @@ app.get('/rtmToken', generateRtmToken);
 
 
 http.createServer(app).listen(app.get('port'), function() {
-    console.log('AgoraSignServer starts at ' + app.get('port'));
+    console.log('anyRTCSignServer starts at ' + app.get('port'));
 });
 
 //https.createServer(credentials, app).listen(app.get('port') + 1, function() {
-//    console.log('AgoraSignServer starts at ' + (app.get('port') + 1));
+//    console.log('anyRTCSignServer starts at ' + (app.get('port') + 1));
 //});

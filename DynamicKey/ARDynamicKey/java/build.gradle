@@ -51,10 +51,10 @@ bintray {
 		name = 'authentication'
 		userOrg = 'ar'
 		licenses = ['Apache-2.0']
-		vcsUrl = 'https://github.com/AgoraIO/Tools.git'
+		vcsUrl = 'https://github.com/anyRTC/Tools.git'
 		version {
 			name = '1.6.1'
-			desc = 'Agora’s Authentication Mechanisms'
+			desc = 'anyRTC’s Authentication Mechanisms'
 			released  = new Date()
 		}
 	}

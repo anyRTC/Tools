@@ -24,69 +24,6 @@ class SimpleTokenBuilder_test : public testing::Test {
 
   virtual void TearDown() {}
 
-  void testSimpleTokenBuilderWithIntUid() {
-    {
-      std::string token = SimpleTokenBuilder::buildTokenWithUid(
-          appID, appCertificate, channelName, uid,
-          UserRole::Role_Subscriber, expiredTs);
-      AccessToken parser;
-      parser.FromString(token);
-      EXPECT_EQ(parser.app_id_, appID);
-      EXPECT_EQ(parser.crc_channel_name_ , crc_channel_name);
-      EXPECT_EQ(parser.crc_uid_, crc_uid);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kJoinChannel], expiredTs);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kPublishAudioStream], 0);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kPublishVideoStream], 0);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kPublishDataStream], 0);
-      EXPECT_EQ(
-          AccessToken::GenerateSignature(
-            appCertificate, appID, channelName,
-            std::to_string(uid), parser.message_raw_content_),
-          parser.signature_);
-    }
-    {
-      std::string token = SimpleTokenBuilder::buildTokenWithUid(
-          appID, appCertificate, channelName, uid,
-          UserRole::Role_Attendee, expiredTs);
-      AccessToken parser;
-      parser.FromString(token);
-      EXPECT_EQ(parser.app_id_, appID);
-      EXPECT_EQ(parser.crc_channel_name_ , crc_channel_name);
-      EXPECT_EQ(parser.crc_uid_, crc_uid);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kJoinChannel], expiredTs);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kPublishAudioStream], expiredTs);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kPublishVideoStream], expiredTs);
-      EXPECT_EQ(parser.message_.messages[AccessToken::kPublishDataStream], expiredTs);
-      EXPECT_EQ(
-          AccessToken::GenerateSignature(
-            appCertificate, appID, channelName,
-            std::to_string(uid), parser.message_raw_content_),
-          parser.signature_);
-    }
-  }
-
-  void testSimpleTokenBuilderWithZero() {
-    std::string token = SimpleTokenBuilder::buildTokenWithUid(
-        appID, appCertificate, channelName, 0,
-        UserRole::Role_Attendee, expiredTs);
-    AccessToken parser;
-    parser.FromString(token);
-    EXPECT_EQ(parser.app_id_, appID);
-    EXPECT_EQ(parser.crc_channel_name_ , crc_channel_name);
-    EXPECT_EQ(parser.crc_uid_,
-              crc32(0, reinterpret_cast<Bytef*>(const_cast<char*>("")),
-              0));
-    EXPECT_EQ(parser.message_.messages[AccessToken::kJoinChannel], expiredTs);
-    EXPECT_EQ(parser.message_.messages[AccessToken::kPublishAudioStream], expiredTs);
-    EXPECT_EQ(parser.message_.messages[AccessToken::kPublishVideoStream], expiredTs);
-    EXPECT_EQ(parser.message_.messages[AccessToken::kPublishDataStream], expiredTs);
-    EXPECT_EQ(
-        AccessToken::GenerateSignature(
-          appCertificate, appID, channelName,
-          "", parser.message_raw_content_),
-        parser.signature_);
-  }
-
 
   void testSimpleTokenBuilderWithStringUid() {
     {

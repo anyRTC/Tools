@@ -2,7 +2,7 @@
   "name": "agora-access-token",
   "version": "2.0.4",
   "description": "",
-  "homepage": "https://github.com/AgoraIO/Tools/tree/master/DynamicKey/ARDynamicKey/nodejs",
+  "homepage": "https://github.com/anyRTC/Tools/tree/master/DynamicKey/ARDynamicKey/nodejs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

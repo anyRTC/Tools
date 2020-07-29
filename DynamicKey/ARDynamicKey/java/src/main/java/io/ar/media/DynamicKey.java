@@ -4,13 +4,13 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * Created by hefeng on 15/8/10.
- * Util to generate Agora media dynamic key.
+ * Util to generate anyRTC media dynamic key.
  */
 public class DynamicKey {
     /**
      * Generate Dynamic Key for media channel service
-     * @param appID App ID assigned by Agora
-     * @param appCertificate App Certificate assigned by Agora
+     * @param appID App ID assigned by anyRTC
+     * @param appCertificate App Certificate assigned by anyRTC
      * @param channelName name of channel to join, limited to 64 bytes and should be printable ASCII characters
      * @param unixTs unix timestamp in seconds when generating the Dynamic Key
      * @param randomInt salt for generating dynamic key

@@ -1,3 +1,3 @@
-module github.com/AgoraIO/Tools/DynamicKey/AgoraDynamicKey/go/src
+module github.com/anyRTC/Tools/DynamicKey/ARDynamicKey/go/src
 
 go 1.14

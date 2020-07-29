@@ -17,9 +17,5 @@ public class RtcTokenBuilderSample {
         String result = token.buildTokenWithUserAccount(appId, appCertificate,  
         		 channelName, userAccount, Role.Role_Publisher, timestamp);
         System.out.println(result);
-        
-        result = token.buildTokenWithUid(appId, appCertificate,  
-       		 channelName, uid, Role.Role_Publisher, timestamp);
-        System.out.println(result);
     }
 }

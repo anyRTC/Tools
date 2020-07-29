@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by hefeng on 15/8/10.
- * Util to generate Agora media dynamic key.
+ * Util to generate anyRTC media dynamic key.
  */
 public class DynamicKeyUtil {
 

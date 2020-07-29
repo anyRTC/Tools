@@ -1,12 +1,10 @@
 # ARDynamicKey
 
-This page describes the authentication mechanism used by the Agora SDK, as well as providing the related code for generating AccessToken (v2.1.0) or Dynamic Key (v2.0.2 or earlier).
-
-**For users who want a quick deployable sample server to test with, please look at [here](https://github.com/AgoraIO-Community/TokenServer-nodejs)**
+This page describes the authentication mechanism used by the anyRTC SDK, as well as providing the related code for generating AccessToken (v2.1.0) or Dynamic Key (v2.0.2 or earlier).
 
 ## AccessToken
 
-AccessToken is more powerful than the legacy Dynamic Key. It encapsulates several privileges in one token to cover various services provided by Agora.
+AccessToken is more powerful than the legacy Dynamic Key. It encapsulates several privileges in one token to cover various services provided by anyRTC.
 
 AccessToken is available as of SDK 2.1.0.
 
@@ -26,49 +24,6 @@ Sample Code for generating AccessToken are available on the following platforms:
  + Node.js
  + Python
  + PHP
- + Perl
- + CSharp
-
-> You can use either the following SimpleTokenBuilder or AccessToken sample code to generate an AccessToken. SimpleTokenBuilder encapsulates the underlying AccessToken sample code and is easy to use.
-
-### C++
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/cpp/src/SimpleTokenBuilder.h
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/cpp/src/AccessToken.h
-
-### Go
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/go/src/SimpleTokenBuilder/SimpleTokenBuilder.go
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/go/src/AccessToken/AccessToken.go
-
-### Java
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/java/src/main/java/io/agora/media/SimpleTokenBuilder.java
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/java/src/main/java/io/agora/media/AccessToken.java
-
-### Node.js
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/nodejs/src/SimpleTokenBuilder.js
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/nodejs/src/AccessToken.js
-
-### Python
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/python/src/SimpleTokenBuilder.py
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/python/src/AccessToken.py
-
-### PHP
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/php/src/SimpleTokenBuilder.php
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/php/src/AccessToken.php
-
-### Perl
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/perl/src/Agora/SimpleTokenBuilder.pm
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/perl/src/Agora/AccessToken.pm
-
-### CSharp
-
-+ https://github.com/AgoraIO/Tools/blob/master/DynamicKey/ARDynamicKey/csharp/src/AgoraIO/Media/AccessToken.cs
 
 ### **YOUR IMPLEMENTATIONS ARE VERY WELCOME.**
 
@@ -77,7 +32,7 @@ If you have implemented our algorithm in other languages, kindly file a pull req
 
 ## Dynamic Key
 
-The Dynamic Key is used by Agora SDKs of versions earlier than 2.1.
+The Dynamic Key is used by anyRTC SDKs of versions earlier than 2.1.
 
  + To join a media channel, use generateMediaChannelKey.
  + For recording services, use generateRecordingKey.
@@ -86,7 +41,7 @@ Following are samples for C++, Go, Java, Nodejs, PHP and Python.
 
 ### SDK and Dynamic Key Compatibility
 
-If you are using the Agora SDK of a version earlier than 2.1 and looking at implementing the function of publishing with a permission key, Agora recommends that you upgrade to DynamicKey5.
+If you are using the anyRTC SDK of a version earlier than 2.1 and looking at implementing the function of publishing with a permission key, anyRTC recommends that you upgrade to DynamicKey5.
 
 #### To verify user permission in channel:
 | Dynamic Key Version | UID | SDK Version  |
@@ -250,38 +205,3 @@ if __name__ == "__main__":
 
 ```
 
-### Ruby
-```ruby
-require '../src/dynamic_key5'
-app_id = "970ca35de60c44645bbae8a215061b33"
-app_certificate = "5cfd2fd1755d40ecb72977518be15d3b"
-channel_name = "7d72365eb983485397e3e3f9d460bdda"
-unix_ts = Time.now.utc.to_i
-uid = 2882341273
-random_int = -2147483647
-expired_ts = 0
-
-puts "%.8x" % (random_int & 0xFFFFFFFF)
-
-media_channel_key = DynamicKey5.gen_media_channel_key(app_id, app_certificate, channel_name, unix_ts, random_int, uid, expired_ts)
-
-puts "media_channel_key:#{media_channel_key}"
-
-
-```
-### Perl
-```perl
-use Agora::DynamicKey5;
-
-my $app_id          = "970ca35de60c44645bbae8a215061b33";
-my $app_certificate = "5cfd2fd1755d40ecb72977518be15d3b";
-my $channel_name    = "7d72365eb983485397e3e3f9d460bdda";
-my $unix_ts         = time();
-my $uid             = 2882341273;
-my $random_int      = -2147483647;
-my $expired_ts      = 0;
-
-my $media_channel_key = Agora::DynamicKey5::gen_media_channel_key($app_id, $app_certificate, $channel_name, $unix_ts, $random_int, $uid, $expired_ts);
-
-say "media_channel_key:$media_channel_key";
-```
