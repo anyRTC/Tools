@@ -78,7 +78,7 @@ If you are using the anyRTC SDK of a version earlier than 2.1 and looking at imp
 #include "../src/DynamicKey5.h"
 #include <iostream>
 #include <cstdint>
-using namespace agora::tools;
+using namespace ar::tools;
 
 int main(int argc, char const *argv[]) {
   ::srand(::time(NULL));
@@ -126,9 +126,9 @@ func main() {
 
 ### Java
 ```java
-package io.agora.media.sample;
+package io.ar.media.sample;
 
-import io.agora.media.DynamicKey5;
+import io.ar.media.DynamicKey5;
 
 import java.util.Date;
 import java.util.Random;
