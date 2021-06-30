@@ -49,7 +49,7 @@ useConf = "r"
 
 1.  安装nignx服务，nginx配置读取文件，目录路径为配置文件中的ossDir配置的路径
 2. 下载arfdfs.tar.gz安装包，解压 tar zxvf arfdfs.tar.gz
-3. 安装：进入arfdfs目录，根据配置文件说明配置配置文件，执行：./arfdfs_install.sh 进行安装，卸载：./arfdfs_install.sh -u
+3. 安装：进入arfdfs目录，根据配置文件说明配置配置文件，执行：sudo ./arfdfs_install.sh 进行安装，卸载：sudo ./arfdfs_install.sh -u
 4. 安装完成后会自行启动服务
 5. 启动服务：systemctrl start arfdfs
 6. 重启服务：systemctrl restart arfdfs
