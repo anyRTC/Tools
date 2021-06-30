@@ -36,7 +36,7 @@ useConf = "r"
   # 访问文件接口地址前缀（需要nginx配合访问）
   httpOssPrefix = "http://nginx host"
   # nginx可读取的文件目录路径
-  ossDir = "/home/artc/ossdir"
+  ossDir = "/usr/share/nginx/ossdir"
   [rConfig.logger]
     logDir = "/var/log/arfdfs"
     logName = "arfdfs.log"
@@ -45,7 +45,9 @@ useConf = "r"
 
 
 
-1.  安装nignx服务，nginx配置读取文件
+**系统要求：**CentOS 7.6以上，Ubuntu 14.04以上，磁盘能保证业务系统视频文件存储大小
+
+1.  安装nignx服务，nginx配置读取文件，目录路径为配置文件中的ossDir配置的路径
 2. 下载arfdfs.tar.gz安装包，解压 tar zxvf arfdfs.tar.gz
 3. 安装：进入arfdfs目录，根据配置文件说明配置配置文件，执行：./arfdfs_install.sh 进行安装，卸载：./arfdfs_install.sh -u
 4. 安装完成后会自行启动服务
